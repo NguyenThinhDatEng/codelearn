@@ -31,7 +31,7 @@ int main()
     {
         if (onScreen[v[i]] == false) // no 2 messages with the same phone number are displayed on the screen together
         {
-            if (k == 0)
+            if (k == 0)     
             {
                 onScreen[v[i]] = true;
                 q.push(v[i]);
