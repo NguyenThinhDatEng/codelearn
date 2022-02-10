@@ -39,12 +39,13 @@ void addTail(Node **tail, int x)
 
 void insertAt(Node **head, Node **tail, int n, int k, int x)
 {
+    if (k > n)
+        return;
     if (k == 0)
     {
         addHead(head, x);
         return;
     }
-
     if (k == n)
     {
         addTail(tail, x);
@@ -54,29 +55,31 @@ void insertAt(Node **head, Node **tail, int n, int k, int x)
     int mid = n / 2;
     Node *tmp = new Node(x);
     Node *p;
-    if (k > mid)
+    if (k >= mid) // if k >= n / 2, browse list from tail
     {
         p = *tail;
-        while (--k > mid)
+        while (++k < n)
         {
             p = p->prev;
         }
+        // change next pointer and prev pointer of 3 node involved
         tmp->prev = p->prev;
         tmp->next = p;
         p->prev->next = tmp;
         p->prev = tmp;
     }
-    else
+    else // if k < n / 2, browse list from head
     {
         p = *head;
         while (++k < mid)
         {
-            p = p->prev;
+            p = p->next;
         }
-        tmp->prev = p->prev;
-        tmp->next = p;
-        p->prev->next = tmp;
-        p->prev = tmp;
+        // change next pointer and prev pointer of 3 node involved
+        tmp->prev = p;
+        tmp->next = p->next;
+        p->next->prev = tmp;
+        p->next = tmp;
     }
 }
 
@@ -97,17 +100,22 @@ int main()
     cin >> n;
 
     // generate head and tail
-    
-    Node *head = new Node(1);
+    int tmp;
+    cin >> tmp;
+    Node *head = new Node(tmp);
     Node *tail = head;
 
     // get data to list
-    Node *p = head;
-    int tmp;
-    for (int i = 2; i <= n; i++)
+    for (int i = 1; i < n; i++)
     {
-        addTail(&tail, i);
+        cin >> tmp;
+        addTail(&tail, tmp);
     }
+
+    // input
+    int k, x; // insert x at k index    0 <= k <= n
+    cin >> k >> x;
+    insertAt(&head, &tail, n, k, x);
 
     // algorithm
     printList(head);
