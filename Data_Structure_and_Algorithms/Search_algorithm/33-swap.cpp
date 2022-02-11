@@ -43,7 +43,8 @@ int main()
     sort(v2.begin(), v2.end());
     int i = linear_search(n, v, v2[0], 0);
     int j = linear_search(n, v, v2[n - 1], 1);
-    swap(v[i], v[j]); // highlight
+    // highlight
+    swap(v[i], v[j]);
 
     // display
     for (int i = 0; i < n; i++)
