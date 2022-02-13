@@ -1,6 +1,6 @@
+// find the sum s of the consecutive sequence
 #include <iostream>
 #include <vector>
-#include <queue>
 using namespace std;
 
 int binary_search(vector<int> v, int left, int right, int x)
@@ -34,12 +34,9 @@ int main()
     cin >> s;
 
     // Special case
-    if (v[0] >= s)
+    if (v[0] == s)
     {
-        if (v[0] > s)
-            cout << -1;
-        else
-            cout << s;
+        cout << s;
         return 0;
     }
     // main
