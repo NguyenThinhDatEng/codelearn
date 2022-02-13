@@ -3,24 +3,23 @@
 
 using namespace std;
 
-int binary_search(vector<int> v, int left, int right, int x)
+int res = -1;
+
+void binary_search_variant(vector<int> v, int left, int right, int x)
 {
     if (right >= left)
     {
         int mid = (left + right) / 2;
-        if (v[mid] == x)
+        // cout << "mid = " << mid << endl;
+        if (v[mid] >= x)
         {
-            if (mid == 0)
-                return mid;
-            if (v[mid - 1] == x)
-                return binary_search(v, left, mid - 1, x);
-            return mid;
+            if (v[mid] == x)
+                res = mid;
+            return binary_search_variant(v, left, mid - 1, x);
         }
-        if (x > v[mid])
-            return binary_search(v, mid + 1, right, x);
-        return binary_search(v, left, mid - 1, x);
+        return binary_search_variant(v, mid + 1, right, x);
     }
-    return -1;
+    return;
 }
 
 int main()
@@ -39,6 +38,7 @@ int main()
     cin >> x;
 
     // algo
-    cout << binary_search(v, 0, n - 1, x);
+    binary_search_variant(v, 0, n - 1, x);
+    cout << res;
     return 0;
 }
