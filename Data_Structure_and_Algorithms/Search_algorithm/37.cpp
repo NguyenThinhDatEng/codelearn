@@ -43,9 +43,7 @@ int main()
         return 0;
     }
     // main
-    int lastIndex = 0; // number sequence with index from 0 to lastIndex less than s
-    int a = -1, b;     // number sequence with index from a to b whose sum is s
-    bool assigned_lastIndex = false;
+    int a = -1, b; // number sequence with index from a to b whose sum is s
     // generate sub array
     vector<int> totals; // sum of numbers from 0 to i
     int x;              // the last element of totals
@@ -62,12 +60,7 @@ int main()
         }
         if (x > s)
         {
-            if (assigned_lastIndex == false)
-            {
-                lastIndex = i - 1;
-                assigned_lastIndex = true;
-            }
-            int index = binary_search(totals, 0, lastIndex, x - s);
+            int index = binary_search(totals, 0, i - 1, x - s);
             if (index > -1)
             {
                 a = index + 1;
