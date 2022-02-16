@@ -35,7 +35,6 @@ void merge(vector<int> &v, int l, int r, int mid)
     }
 
     // assign v
-
     for (int k = l; k <= r; k++)
     {
         v[k] = tmp[k - l];
