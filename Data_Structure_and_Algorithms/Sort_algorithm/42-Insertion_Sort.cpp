@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// based in-place comparison
 /*
     Sequence a[0]->a[k] is sorted, insert a[k + 1] in the appropriate position in that sequence
     (a[k + 1] = a[k])

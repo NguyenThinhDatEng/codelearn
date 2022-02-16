@@ -3,9 +3,7 @@
 
 using namespace std;
 
-/*
-    divide and conquer
-*/
+// based divide and conquer
 // O(n log n)
 void merge(vector<int> &v, int l, int r, int mid)
 {

@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// based in-place comparison
 /*
     Sequence a[0]->a[k] is sorted, select minimum value a[i] of sequence a[k + 1]->a[n - 1]
     (swap a[i] with a[k + 1])
