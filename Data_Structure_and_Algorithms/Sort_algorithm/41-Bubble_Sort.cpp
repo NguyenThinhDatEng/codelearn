@@ -5,7 +5,7 @@ using namespace std;
 
 // The smallest number is moved to the beginning of the sequence
 // compare in turn (a[0] with a[1]), (a[1] with a[2]), ..., (a[n - 2] with a[n - 1])
-// slowest among the basic sorting algorithms
+// O(n²) slowest among the basic sorting algorithms
 void bubble_sort(int n, vector<int> &v)
 {
     int size = n - 1;
