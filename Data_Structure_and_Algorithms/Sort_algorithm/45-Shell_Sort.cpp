@@ -5,7 +5,7 @@ using namespace std;
 
 // based insertion sort
 // interval (khoảng)
-// O(n log n)
+// O(n (log n)²)
 void shell_sort(int n, vector<int> &v)
 {
     int interval = n / 2;
