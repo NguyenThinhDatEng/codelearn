@@ -8,7 +8,7 @@ int n, m;      // convolution m of n elements
 
 void TRY(int k)
 {
-    if (k == m - 1)
+    if (k == m + 1)
     {
         // cout << n << endl;
         for (int i = 1; i <= m; i++)
@@ -17,9 +17,12 @@ void TRY(int k)
         return;
     }
 
-    // v[k] > v[k - 1]
     /*
-        Ex: 9A3 => the end of result is 789
+      v[k] > v[k - 1]                               (1)
+    */
+
+    /*  (2)
+        Ex: 9C3 => the end of result is 789
             7 = 9 - 3 + 1
             8 = 9 - 3 + 2
             9 = 9 - 3 + 3
@@ -27,7 +30,7 @@ void TRY(int k)
         v[2] <= n - m + 2
         ...
         v[n] <= n - m + n
-        => v[k] <= n - m + k; k ∈ [1, n]
+        => v[k] <= n - m + k; k ∈ [1, n]            (2)
     */
 
     for (int i = v[k - 1] + 1; i <= n - m + k; i++)
