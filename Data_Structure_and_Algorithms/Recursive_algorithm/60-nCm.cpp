@@ -21,7 +21,7 @@ void TRY(int k)
       v[k] > v[k - 1]                               (1)
     */
 
-    /*  (2)
+    /*
         Ex: 9C3 => the end of result is 789
             7 = 9 - 3 + 1
             8 = 9 - 3 + 2
