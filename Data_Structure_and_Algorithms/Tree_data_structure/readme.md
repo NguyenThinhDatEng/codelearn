@@ -43,11 +43,12 @@
 - The left child of a node must have a value less than the value of the parent node (of this child node) and the right child of the node must have a value greater than the value of the parent node (of this child node)
 
 **Traversal (3)**
-------A
-----/---\
----B-----C
---/ \---/ \
--D---E F---G
+
+         A
+       /   \
+      B     C
+     / \   / \
+    D   E F   G
 
 - Middle order traversal:
   D → B → E → A → F → C → G
