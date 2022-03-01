@@ -58,3 +58,7 @@
 
 - Post-order traversal:
   D → E → B → F → G → C → A
+
+**AVL**
+
+- AVL tree (short for inventors Adelson, Velski and Landis) is a highly balanced binary search tree. The AVL tree checks the heights (ranks) of the left and right subtrees and makes sure that the difference between them is not greater than 1.
